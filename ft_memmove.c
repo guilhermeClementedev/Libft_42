@@ -9,7 +9,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	fake_src = (unsigned char *)src;
 	if (!dest || !src)
 		return (NULL);
-	if(dest > src)
+	if (dest > src)
 	{
 		while (n > 0)
 		{

@@ -2,8 +2,8 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	unsigned char *ptr;
-	size_t	i;
+	unsigned char	*ptr;
+	size_t			i;
 
 	i = 0;
 	ptr = (unsigned char *) s;
@@ -20,6 +20,6 @@ void	*ft_memchr(const void *s, int c, size_t n)
 
 int main()
 {
-	printf("%s", (char *)ft_memchr("vasco", 's', 5));
+	printf("%s", (char *)ft_memchr("try", 'r', 1));
 }
 */
