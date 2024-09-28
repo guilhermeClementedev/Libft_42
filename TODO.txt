@@ -7,8 +7,8 @@ to do: (lembrar de tirar as bibliotecas do .h)
 
 mandatory
   part1                       part2
- ✅ isalpha                  • ft_substr
- ✅ isdigit                  • ft_strjoin
+ ✅ isalpha                 *✅ ft_substr
+ ✅ isdigit                 *✅ ft_strjoin
  ✅ isalnum                  • ft_strtrim
  ✅ isascii                  • ft_split
  ✅ isprint                  • ft_itoa
@@ -29,7 +29,7 @@ mandatory
  ✅ strnstr
  ✅ atoi
     uses malloc:
-      • calloc
+  *✅• calloc
   *✅ strdup
 
 bonus:
