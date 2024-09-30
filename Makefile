@@ -26,7 +26,7 @@ clean:
 fclean: clean
 	@rm -f $(NAME)
 run:
-	./$(NAME)
+	./$(NAME) | cat -e
 
 space:
 	@echo ""
@@ -81,3 +81,4 @@ IMAGE_LOADING:
 	@echo "\033[32m██████████ 𝟏𝟎𝟎%\033[0m"
 
 IMAGE_VASCO:
+	ar -rcs $(NAME) $(OBJ)

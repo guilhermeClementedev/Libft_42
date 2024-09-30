@@ -1,33 +1,41 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: guclemen <guclemen@student.42.rio>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/30 10:15:26 by guclemen          #+#    #+#             */
+/*   Updated: 2024/09/30 10:15:27 by guclemen         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-int	ft_strcmp(const char *s1, const char *s2)
+static int	ft_strcmp(const char s1, const char *s2)
 {
 	int	i;
 
 	i = 0;
 	while (s2[i])
 	{
-		if (*s1 == s2[i])
+		if (s1 == s2[i])
 			return (1);
 		i++;
 	}
 	return (0);
 }
 
-char	*ft_strdcpy(char *dst, const char *src, const char *rem)
+char	*ft_strdcpy(char *dst, const char *src, int rem)
 {
 	unsigned int	i;
 	unsigned int	t;
 
-	t = 0;
+	t = ft_strlen (src) - rem;
 	i = 0;
-	while (src[i])
+	while (i < t)
 	{
-		if (!ft_strcmp(&src[i], rem))
-		{
-			dst[t] = src[i];
-			t++;
-		}
+		dst[i] = src[i];
 		i++;
 	}
 	dst[t] = '\0';
@@ -36,31 +44,37 @@ char	*ft_strdcpy(char *dst, const char *src, const char *rem)
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	unsigned int	count;
+	unsigned int	front;
 	unsigned int	i;
+	unsigned int	back;
 	char			*ptr;
 
-	i = 0;
-	count = 0;
-	while (s1[i])
+	back = 0;
+	i = ft_strlen(s1);
+	front = 0;
+	while (s1[front])
 	{
-		count += ft_strcmp (&s1[i], set);
-		i++;
+		if (!ft_strcmp (s1[front], set))
+			break ;
+		front++;
 	}
-	ptr = (char *)ft_calloc ((i + 1) - count, 1);
+	while (--i != 0)
+	{
+		if (!ft_strcmp (s1[i], set))
+			break ;
+		back++;
+	}
+	ptr = (char *)ft_calloc ((ft_strlen(s1) + 1) - front - back, 1);
 	if (ptr != NULL)
-	{
-		ft_strdcpy(ptr, s1, set);
-		return (ptr);
-	}
+		return (ft_strdcpy(ptr, s1 + front, back), ptr);
 	return (NULL);
 }
 /*
 #include <stdio.h>
 int main()
 {
-	char *arr = "   I LOVE VASCO   ";
-	char *sep = " ";
+	char *arr = " a  I LOVE VASCO!  a ";
+	char *sep = "aaaa! ";
 	printf("%s\n", ft_strtrim(arr, sep));
 }
 */

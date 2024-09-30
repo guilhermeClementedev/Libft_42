@@ -44,3 +44,5 @@ bonus:
     • ft_lstmap
 
 Rever todas as funções de memoria principalmente memset ,memmove e memcopy
+testar calloc - max size_t
+botar static

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: guclemen <guclemen@student.42.rio>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/30 10:12:36 by guclemen          #+#    #+#             */
+/*   Updated: 2024/09/30 10:12:37 by guclemen         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 int	ft_sizenbr(int nb)
@@ -20,20 +32,18 @@ int	ft_sizenbr(int nb)
 	return (count);
 }
 
-char	*ft_itoa(int n)
+void	ft_comarr(char *ptr, int n, int size)
 {
-	int		size;
-	char	*ptr;
 	char	num;
 
-	size = ft_sizenbr(n);
-	printf("tamanho size: %d\n", size);
-	ptr = (char *) ft_calloc(size + 1, 1);
-	if (size == 1 || ptr == NULL)
-		return (NULL);
-	ptr[size] = '\0';
 	if (n < 0)
 	{
+		if (n == -2147483648)
+		{
+			size--;
+			ptr[size] = 8 + '0';
+			n = (n / 10);
+		}
 		ptr[0] = '-';
 		n *= -1;
 	}
@@ -44,13 +54,30 @@ char	*ft_itoa(int n)
 		ptr[size] = num;
 		n = (n / 10);
 	}
+}
+
+char	*ft_itoa(int n)
+{
+	int		size;
+	char	*ptr;
+
+	size = ft_sizenbr(n);
+	if (n == 0)
+		size = 1;
+	ptr = (char *) ft_calloc(size + 1, 1);
+	if (size + 1 == 1 || ptr == NULL)
+		return (NULL);
+	ptr[size] = '\0';
+	if (n == 0)
+		ptr[0] = '0';
+	else
+		ft_comarr(ptr, n, size);
 	return (ptr);
 }
-/*
-#include <stdio.h>
 
+/*
 int main()
 {
-	printf("%s\n",ft_itoa(-10));
+	printf("%s\n",ft_itoa(0));
 }
 */
