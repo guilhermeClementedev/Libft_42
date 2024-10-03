@@ -76,7 +76,7 @@ char	**ft_split(char const *s, char c)
 int main()
 {
 	char	**ptrs;
-	char *try = "    vasco    oi  gama";
+	char *try = " vasco";
 	int words = ft_words (try, ' ');
 	ptrs = ft_split(try, ' ');
 	int i = 0;
