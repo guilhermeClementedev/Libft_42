@@ -10,7 +10,7 @@ int	ft_words (const char *s, int c)
 	count = 0;
 	while(s[i])
 	{
-		if (s[i] == c)
+		if (s[i] == c && s[i + 1] != c)
 			count++;
 		i++;
 	}
@@ -19,29 +19,42 @@ int	ft_words (const char *s, int c)
 	return (count);
 }
 
-void	ft_word (char **ptrs, const char *s, int c)
+int	ft_sizeword (const char *src, int c)
+{
+	unsigned int	i;
+
+	i = 0;
+	while (src[i] != c && src[i])
+		i++;
+	return (i);
+}
+
+void	ft_allocword (char **ptrs, const char *s, int c)
 {
 	unsigned int	i;
 	unsigned int	k;
+	unsigned int	size;
 
 	i = 0;
 	k = 0;
-	while(*s)
+	while (s[i])
 	{
-		if (*s == c)
-		{
-				i++;
-			ptrs[k] = (char *) ft_calloc(i + 1, 1);
-			printf("CADA BGLH %d\n", i);
-			i = 0;
-			k++;
-		}
-		s++;
-		i++;
+		while (s[i] == c && s[i])
+			i++;
+		size = ft_sizeword(&s[i], c);
+		printf("size %d	\n", size);
+		printf("i = %d	\n", i);
+		ptrs[k] = (char *)ft_calloc (size + 1, 1);
+		ft_strlcpy(ptrs[k], &s[i], size + 1);
+		k++;
+		while (s[i] != c && s[i])
+			i++;
 	}
-	if (!*s)
-		ptrs[k] = (char *) ft_calloc(i + 1, 1);
-	printf("CADA BGLH %d\n", i);
+	if (!s[i])
+	{
+		ptrs[k] = (char *)ft_calloc (1, 1);
+		ptrs[k][0] =  '\0';
+	}
 }
 
 char	**ft_split(char const *s, char c)
@@ -50,41 +63,28 @@ char	**ft_split(char const *s, char c)
 	unsigned int	words;
 	unsigned int	i;
 	unsigned int	k;
-	unsigned int	d;
 
 	k = 0;
 	i = 0;
 	words = ft_words (s, c);
-	ptrs = (char **)ft_calloc(words,sizeof(char *));
-	ft_word (ptrs,s, c);
-	while (s[i])
-	{
-		d = 0;
-		while (s[i] != c && s[i])
-		{
-			ptrs[k][d] = s[i];
-			d++;
-			i++;
-		}
-		ptrs[k][d] = '\0';
-		k++;
-		while(s[i] == c && s[i])
-			i++;
-	}
-	ptrs[k][d] = '\0';
+	ptrs = (char **)ft_calloc(words + 1,sizeof(char *));
+	ft_allocword (ptrs,s, c);
+
 	return(ptrs);
 }
-
+/*
 int main()
 {
 	char	**ptrs;
-	//int words = ft_words ("vasco oi", ' ');
-	ptrs = ft_split("vasco oi", ' ');
+	char *try = "    vasco    oi  gama";
+	int words = ft_words (try, ' ');
+	ptrs = ft_split(try, ' ');
 	int i = 0;
-	/*while (i < words)
+	while (i < words)
 	{
-		printf("frase %d : %s\n", i, ptrs[i]);
+		printf("frase %d :%s\n", i, ptrs[i]);
 		i++;
-	}*/
-	printf("frase %d : %s\n", i, ptrs[i]);
+	}
+	//printf("frase %d : %s\n", i, ptrs[i]);
 }
+*/
