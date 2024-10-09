@@ -5,7 +5,6 @@
 
 int main ()
 {
-	char *s = strdup("0123456789");
-	s = ft_substr(s, 9, 10);
-	printf ("%s", s);
+	printf("FAKE: %d\n", ft_atoi("\e475"));
+	printf("TRUE: %d\n", atoi("\e475"));
 }
