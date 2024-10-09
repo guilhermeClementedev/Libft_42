@@ -18,10 +18,10 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	char	*arr;
 
 	size = ft_strlen(s1) + ft_strlen(s2) + 1;
-	arr = (char *)ft_calloc (size, sizeof (char));
+	arr = (char *)ft_calloc(size, sizeof (char));
 	if (arr != NULL)
 	{
-		ft_strlcat(arr, s1, ft_strlen(s1));
+		ft_strlcat(arr, s1, ft_strlen(s1) + 1);
 		ft_strlcat(arr, s2, size);
 		return (arr);
 	}

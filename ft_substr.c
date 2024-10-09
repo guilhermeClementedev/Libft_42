@@ -12,19 +12,36 @@
 
 #include "libft.h"
 
+static void	ft_copy(char *dst, const char *src, int len)
+{
+	int	i;
+
+	i = 0;
+	while (src[i] && i < len)
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	dst[i] = '\0';
+}
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	size_t	i;
 	char	*arr;
+	unsigned int	k;
 
-	i = ft_strlen(&s[start - 1]);
-	if (i < len)
-		arr = (char *)ft_calloc(len, sizeof(char));
-	else
-		arr = (char *)ft_calloc(i, sizeof(char));
+	k = ft_strlen (s);
+	i = 0;
+	if (!s)
+		return (NULL);
+	while (s[start + i] && i < len && k > start)
+		i++;
+	arr = (char *)ft_calloc(i + 1, sizeof(char));
+	if (i == 0)
+		return (arr);
 	if (arr != NULL)
 	{
-		ft_strlcpy(arr, &s[start - 1], len);
+		ft_copy(arr, s + start, len);
 		return (arr);
 	}
 	return (NULL);

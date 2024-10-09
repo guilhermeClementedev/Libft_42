@@ -1,13 +1,11 @@
 #include "libft.h"
 #include <stdio.h>
-#include <string.h>
+#include <bsd/string.h>
 #include <stdint.h>
 
 int main ()
 {
-	char src[] = "coucou";
-	char dest[10];
-	memset(dest, 'A', 10);
-	printf("fake :%d\n",ft_strlcpy(dest, src, 0) );
+	char *s = strdup("0123456789");
+	s = ft_substr(s, 9, 10);
+	printf ("%s", s);
 }
-

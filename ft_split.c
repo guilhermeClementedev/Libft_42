@@ -42,8 +42,8 @@ void	ft_allocword (char **ptrs, const char *s, int c)
 		while (s[i] == c && s[i])
 			i++;
 		size = ft_sizeword(&s[i], c);
-		printf("size %d	\n", size);
-		printf("i = %d	\n", i);
+		//printf("size %d	\n", size);
+		//printf("i = %d	\n", i);
 		ptrs[k] = (char *)ft_calloc (size + 1, 1);
 		ft_strlcpy(ptrs[k], &s[i], size + 1);
 		k++;
