@@ -61,11 +61,7 @@ char	**ft_split(char const *s, char c)
 {
 	char			**ptrs;
 	unsigned int	words;
-	unsigned int	i;
-	unsigned int	k;
 
-	k = 0;
-	i = 0;
 	words = ft_words (s, c);
 	ptrs = (char **)ft_calloc(words + 1,sizeof(char *));
 	ft_allocword (ptrs,s, c);

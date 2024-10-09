@@ -14,15 +14,19 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	int	i;
+	int				i;
+	unsigned char	uc;
 
+	uc= (unsigned char)c;
 	i = 0;
 	while (s[i])
 	{
-		if (s[i] == c)
+		if ((unsigned char)s[i] == uc)
 			return ((char *)&s[i]);
 		i++;
 	}
+	if (uc == '\0' && s[i] == '\0')
+		return ((char *)&s[i]);
 	return (NULL);
 }
 /*
