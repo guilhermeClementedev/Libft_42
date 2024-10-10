@@ -26,19 +26,20 @@ static void	ft_copy(char *dst, const char *src, int len)
 }
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t	i;
+	size_t	size;
 	char	*arr;
 	unsigned int	k;
 
 	k = ft_strlen (s);
-	i = 0;
 	if (!s)
 		return (NULL);
-	while (s[start + i] && i < len && k > start)
-		i++;
-	arr = (char *)ft_calloc(i + 1, sizeof(char));
-	if (i == 0)
-		return (arr);
+	if (start >= k)
+		return ((char *)ft_calloc(1,1));
+	size = k - start;
+	if (len < size)
+		arr = (char *)ft_calloc(len + 1, sizeof(char));
+	else
+		arr = (char *)ft_calloc(size + 1, sizeof(char));
 	if (arr != NULL)
 	{
 		ft_copy(arr, s + start, len);

@@ -1,5 +1,4 @@
 #include "libft.h"
-#include <stdio.h>
 
 static int	ft_words (const char *s, int c)
 {
@@ -16,9 +15,8 @@ static int	ft_words (const char *s, int c)
 	}
 	if (s[i] == '\0')
 		count++;
-	if (count == 1 && s[0] != '\0')
+	if (count == 1 && s[0] != c )
 		count++;
-	printf("Meoria words:%d\n", count);
 	return (count);
 }
 
@@ -63,6 +61,12 @@ char	**ft_split(char const *s, char c)
 	char			**ptrs;
 	unsigned int	words;
 
+	if (!s || !s[0])
+	{
+		ptrs = ((char **) ft_calloc(1,sizeof(char *)));
+		ptrs[0] = NULL;
+		return (ptrs);
+	}
 	words = ft_words (s, c);
 	ptrs = (char **)ft_calloc(words,sizeof(char *));
 	ft_allocword (ptrs,s, c);
