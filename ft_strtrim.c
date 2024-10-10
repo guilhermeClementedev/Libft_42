@@ -52,20 +52,12 @@ char	*ft_strtrim(char const *s1, char const *set)
 	back = 0;
 	i = ft_strlen(s1);
 	front = 0;
-	while (s1[front])
-	{
-		if (!ft_strcmp (s1[front], set))
-			break ;
+	while (s1[front] && ft_strcmp (s1[front], set))
 		front++;
-	}
 	if (s1[front] == '\0')
-		return (ptr = calloc(1, 1));
-	while (--i != 0)
-	{
-		if (!ft_strcmp (s1[i], set))
-			break ;
+		return (ptr = ft_calloc(1, 1));
+	while (--i != 0 && ft_strcmp (s1[i], set))
 		back++;
-	}
 	ptr = (char *)ft_calloc ((ft_strlen(s1) + 1) - front - back, 1);
 	if (ptr != NULL)
 		return (ft_strdcpy(ptr, s1 + front, back), ptr);

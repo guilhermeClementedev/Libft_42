@@ -24,17 +24,18 @@ static void	ft_copy(char *dst, const char *src, int len)
 	}
 	dst[i] = '\0';
 }
+
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t	size;
-	char	*arr;
+	size_t			size;
+	char			*arr;
 	unsigned int	k;
 
 	k = ft_strlen (s);
 	if (!s)
 		return (NULL);
 	if (start >= k)
-		return ((char *)ft_calloc(1,1));
+		return ((char *)ft_calloc(1, 1));
 	size = k - start;
 	if (len < size)
 		arr = (char *)ft_calloc(len + 1, sizeof(char));

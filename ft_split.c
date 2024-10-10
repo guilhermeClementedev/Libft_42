@@ -7,7 +7,7 @@ static int	ft_words (const char *s, int c)
 
 	i = 0;
 	count = 0;
-	while(s[i])
+	while (s[i])
 	{
 		if (s[i] == c && s[i + 1] != c && s[i + 1] != '\0')
 			count++;
@@ -15,7 +15,7 @@ static int	ft_words (const char *s, int c)
 	}
 	if (s[i] == '\0')
 		count++;
-	if (count == 1 && s[0] != c )
+	if (count == 1 && s[0] != c)
 		count++;
 	return (count);
 }
@@ -46,7 +46,7 @@ static void	ft_allocword (char **ptrs, const char *s, int c)
 		if (!s[i])
 		{
 			ptrs[k] = NULL;
-			break;
+			break ;
 		}
 		ptrs[k] = (char *)ft_calloc (size + 1, 1);
 		ft_strlcpy(ptrs[k], &s[i], size + 1);
@@ -63,15 +63,14 @@ char	**ft_split(char const *s, char c)
 
 	if (!s || !s[0])
 	{
-		ptrs = ((char **) ft_calloc(1,sizeof(char *)));
+		ptrs = ((char **) ft_calloc(1, sizeof(char *)));
 		ptrs[0] = NULL;
 		return (ptrs);
 	}
 	words = ft_words (s, c);
-	ptrs = (char **)ft_calloc(words,sizeof(char *));
-	ft_allocword (ptrs,s, c);
-
-	return(ptrs);
+	ptrs = (char **)ft_calloc(words, sizeof(char *));
+	ft_allocword (ptrs, s, c);
+	return (ptrs);
 }
 /*
 int main()
