@@ -5,6 +5,11 @@
 
 int main ()
 {
-	printf("FAKE: %d\n", ft_atoi("\e475"));
-	printf("TRUE: %d\n", atoi("\e475"));
+	int i = 0;
+	char * * tab = ft_split("  tripouille  42  ", ' ');
+	while (i < 3)
+	{
+		printf("%d- %s\n", i , tab[i]);
+		i++;
+	}
 }

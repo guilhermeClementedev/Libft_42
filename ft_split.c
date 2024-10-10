@@ -1,7 +1,7 @@
 #include "libft.h"
 #include <stdio.h>
 
-int	ft_words (const char *s, int c)
+static int	ft_words (const char *s, int c)
 {
 	unsigned int	i;
 	unsigned int	count;
@@ -10,16 +10,19 @@ int	ft_words (const char *s, int c)
 	count = 0;
 	while(s[i])
 	{
-		if (s[i] == c && s[i + 1] != c)
+		if (s[i] == c && s[i + 1] != c && s[i + 1] != '\0')
 			count++;
 		i++;
 	}
 	if (s[i] == '\0')
 		count++;
+	if (count == 1 && s[0] != '\0')
+		count++;
+	printf("Meoria words:%d\n", count);
 	return (count);
 }
 
-int	ft_sizeword (const char *src, int c)
+static int	ft_sizeword (const char *src, int c)
 {
 	unsigned int	i;
 
@@ -29,7 +32,7 @@ int	ft_sizeword (const char *src, int c)
 	return (i);
 }
 
-void	ft_allocword (char **ptrs, const char *s, int c)
+static void	ft_allocword (char **ptrs, const char *s, int c)
 {
 	unsigned int	i;
 	unsigned int	k;
@@ -42,18 +45,16 @@ void	ft_allocword (char **ptrs, const char *s, int c)
 		while (s[i] == c && s[i])
 			i++;
 		size = ft_sizeword(&s[i], c);
-		//printf("size %d	\n", size);
-		//printf("i = %d	\n", i);
+		if (!s[i])
+		{
+			ptrs[k] = NULL;
+			break;
+		}
 		ptrs[k] = (char *)ft_calloc (size + 1, 1);
 		ft_strlcpy(ptrs[k], &s[i], size + 1);
 		k++;
 		while (s[i] != c && s[i])
 			i++;
-	}
-	if (!s[i])
-	{
-		ptrs[k] = (char *)ft_calloc (1, 1);
-		ptrs[k][0] =  '\0';
 	}
 }
 
@@ -63,7 +64,7 @@ char	**ft_split(char const *s, char c)
 	unsigned int	words;
 
 	words = ft_words (s, c);
-	ptrs = (char **)ft_calloc(words + 1,sizeof(char *));
+	ptrs = (char **)ft_calloc(words,sizeof(char *));
 	ft_allocword (ptrs,s, c);
 
 	return(ptrs);

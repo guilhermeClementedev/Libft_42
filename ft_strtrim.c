@@ -26,7 +26,7 @@ static int	ft_strcmp(const char s1, const char *s2)
 	return (0);
 }
 
-char	*ft_strdcpy(char *dst, const char *src, int rem)
+static char	*ft_strdcpy(char *dst, const char *src, int rem)
 {
 	unsigned int	i;
 	unsigned int	t;
@@ -58,6 +58,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 			break ;
 		front++;
 	}
+	if (s1[front] == '\0')
+		return (ptr = calloc(1, 1));
 	while (--i != 0)
 	{
 		if (!ft_strcmp (s1[i], set))
