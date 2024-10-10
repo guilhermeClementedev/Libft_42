@@ -15,7 +15,7 @@ static int	ft_words (const char *s, int c)
 	}
 	if (s[i] == '\0')
 		count++;
-	if (count == 1 && s[0] != c)
+	if (s[0] != c)
 		count++;
 	return (count);
 }
@@ -61,7 +61,9 @@ char	**ft_split(char const *s, char c)
 	char			**ptrs;
 	unsigned int	words;
 
-	if (!s || !s[0])
+	if (!s)
+		return (NULL);
+	if (!s[0])
 	{
 		ptrs = ((char **) ft_calloc(1, sizeof(char *)));
 		ptrs[0] = NULL;
