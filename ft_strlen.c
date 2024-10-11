@@ -21,14 +21,3 @@ size_t	ft_strlen(const char *s)
 		i++;
 	return (i);
 }
-/*
-#include <stdio.h>
-
-int main()
-{
-  printf("%ld\n", ft_strlen("test"));
-  printf("%ld\n", strlen("test"));
-  printf("%ld\n", ft_strlen("Just trying to survive"));
-  printf("%ld\n", strlen("Just trying to survive"));
-}
-*/

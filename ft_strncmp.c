@@ -23,15 +23,3 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 		i++;
 	return ((unsigned char) s1[i] - (unsigned char) s2[i]);
 }
-
-/*
-#include <stdio.h>
-
-int main()
-{
-  char test[] ={"c"};
-  char test2[] = {"deed"};
-  printf("%d\n", ft_strncmp(test,test2, 0));
-  printf("%d\n", strncmp(test,test2, 0));
-}
-*/

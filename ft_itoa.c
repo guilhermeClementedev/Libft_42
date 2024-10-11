@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int	ft_sizenbr(int nb)
+static int	ft_sizenbr(int nb)
 {
 	int	count;
 
@@ -32,7 +32,7 @@ int	ft_sizenbr(int nb)
 	return (count);
 }
 
-void	ft_comarr(char *ptr, int n, int size)
+static void	ft_comarr(char *ptr, int n, int size)
 {
 	char	num;
 
@@ -74,10 +74,3 @@ char	*ft_itoa(int n)
 		ft_comarr(ptr, n, size);
 	return (ptr);
 }
-
-/*
-int main()
-{
-	printf("%s\n",ft_itoa(0));
-}
-*/

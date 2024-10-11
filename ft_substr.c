@@ -48,20 +48,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	}
 	return (NULL);
 }
-/*
-#include <stdio.h>
-int main()
-{
-	char *arr = "I tried so hard";
-	char *ptr = ft_substr(arr, 3, 12);
-	int i = 0;
-	while (i < 16)
-	{
-		if (ptr[i] == '\0')
-			printf ("NULL\n");
-		else
-			printf("%d-%c\n", i , ptr[i]);
-		i++;
-	}
-}
-*/

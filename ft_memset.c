@@ -26,23 +26,3 @@ void	*ft_memset(void *s, int c, size_t n)
 	}
 	return (s);
 }
-/*
-#include <stdio.h>
-
-int main()
-{
-	char arr[5];
-	ft_memset(arr, 'a', 5);
-
-	printf("%s\n", arr);
-
-	int ptr[5];
-	memset(ptr,254,sizeof(int) * 5);
-	ft_memset(ptr,254,sizeof(int) * 5);
-	int i = 0;
-	while (i < 5)
-	{
-		printf("%d- %d\n",i ,ptr[i]);
-		i++;
-	}
-}*/

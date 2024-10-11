@@ -74,19 +74,3 @@ char	**ft_split(char const *s, char c)
 	ft_allocword (ptrs, s, c);
 	return (ptrs);
 }
-/*
-int main()
-{
-	char	**ptrs;
-	char *try = " vasco";
-	int words = ft_words (try, ' ');
-	ptrs = ft_split(try, ' ');
-	int i = 0;
-	while (i < words)
-	{
-		printf("frase %d :%s\n", i, ptrs[i]);
-		i++;
-	}
-	//printf("frase %d : %s\n", i, ptrs[i]);
-}
-*/

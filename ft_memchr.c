@@ -27,11 +27,3 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	}
 	return (NULL);
 }
-/*
-#include <stdio.h>
-
-int main()
-{
-	printf("%s", (char *)ft_memchr("try", 'r', 1));
-}
-*/

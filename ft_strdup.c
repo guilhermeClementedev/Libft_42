@@ -24,15 +24,3 @@ char	*ft_strdup(const char *s)
 	ft_strlcpy(ptr, s, size + 1);
 	return (ptr);
 }
-/*
-#include <stdio.h>
-
-int main()
-{
-	char *str = "Just";
-	char *ptr;
-	ptr = ft_strdup(str);
-	printf("%s", ptr);
-	free (ptr);
-}
-*/

@@ -36,11 +36,3 @@ int	ft_atoi(const char *nptr)
 	}
 	return (result * neg);
 }
-/*#include <stdio.h>
-
-int main ()
-{
-	printf("%d\n", ft_atoi("\f-12a345"));
-	printf("%d\n", atoi("\f-12a345"));
-}
-*/

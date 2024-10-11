@@ -63,12 +63,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (ft_strdcpy(ptr, s1 + front, back), ptr);
 	return (NULL);
 }
-/*
-#include <stdio.h>
-int main()
-{
-	char *arr = " a  I LOVE VASCO!  a ";
-	char *sep = "aaaa! ";
-	printf("%s\n", ft_strtrim(arr, sep));
-}
-*/

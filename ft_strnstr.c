@@ -33,15 +33,3 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	}
 	return (NULL);
 }
-/* -lbsd
-#include <bsd/string.h>
-#include <stdio.h>
-
-int main()
-{
-	char test[] ={"Im just TRYINg to survive"};
-	char test_litle[] = {"TRYINg"};
-	printf("%s\n", ft_strnstr(test, test_litle, 13));
-	printf("%s\n", strnstr(test, test_litle, 13));
-}
-*/

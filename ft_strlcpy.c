@@ -29,23 +29,3 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	dst[i] = '\0';
 	return (return_size);
 }
-/* -lbsd
-#include <stdio.h>
-#include <bsd/string.h>
-#include <unistd.h>
-
-int main()
-{
-  char arr[50] = {};
-  char src[] = {"I Love CRVG"};
-  printf ("%ld\n", strlcpy(arr, src, 12));
-  //printf ("%zu\n", ft_strlcpy (arr, src, 12));
-  int i = 0;
-  while (arr[i])
-  {
-    write(1,&arr[i],1);
-    i++;
-  }
-  write(1,"\n",1);
-}
-*/

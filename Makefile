@@ -1,6 +1,5 @@
 # -*- MakeFile -*-
-
-all: libft.a
+CC = cc
 
 NAME = libft.a
 
@@ -11,9 +10,21 @@ ft_memchr.c ft_memcmp.c ft_calloc.c ft_substr.c ft_strjoin.c ft_strtrim.c ft_spl
 ft_itoa.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_striteri.c \
 ft_strmapi.c
 
-CFLAGS += -Wall -Wextra -Werror
+BONUS_SRC = ft_lstnew_bonus.c
+
+CFLAGS = -Wall -Wextra -Werror
 
 OBJ = $(MY_SOURCES:.c=.o)
+
+OBJ_BONUS = $(BONUS_SRC:.c=.o)
+
+all: $(NAME)
+
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+bonus: $(OBJ_BONUS) $(NAME)
+	ar -rcs $(NAME) $(OBJ_BONUS)
 
 $(NAME): $(OBJ)
 	ar -rcs $(NAME) $(OBJ)

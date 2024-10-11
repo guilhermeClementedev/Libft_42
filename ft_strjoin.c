@@ -27,22 +27,3 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	}
 	return (NULL);
 }
-/*
-#include <stdio.h>
-int main()
-{
-	char *arr = "i have tried so hard";
-	char *arr2 = " and got so far";
-	char *ptr = ft_strjoin(arr, arr2);
-	int i = 0;
-	printf("%s", ptr);
-	while (i < 35)
-	{
-		if (ptr[i] == '\0')
-			printf ("NULL\n");
-		else
-			printf("%d-%c\n", i , ptr[i]);
-		i++;
-	}
-}
-*/

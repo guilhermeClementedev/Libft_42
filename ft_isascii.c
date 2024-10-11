@@ -17,20 +17,3 @@ int	ft_isascii(int c)
 	else
 		return (0);
 }
-/*
-#include <stdio.h>
-#include <ctype.h>
-
-int main()
-{
-    char *c = "ç";
-	int	i = 0;
-	while (c[i])
-	{
-		printf ("%d\n", isascii(c[i]));
-		printf ("%d\n", ft_isascii(c[i]));
-		i++;
-	}
-    return (0);
-}
-*/

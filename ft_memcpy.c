@@ -28,15 +28,3 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	}
 	return (dest);
 }
-/*
-#include <stdio.h>
-#include <string.h>
-
-int main()
-{
-	char arr[] = {"aabbcc"};
-	//char ptr[4];
-
-	printf("%s", (char *)memcpy(arr + 2, arr, 4));
-}
-*/
