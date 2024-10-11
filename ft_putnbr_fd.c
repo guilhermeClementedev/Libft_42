@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: guclemen <guclemen@student.42.rio>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/11 14:20:17 by guclemen          #+#    #+#             */
+/*   Updated: 2024/10/11 14:20:19 by guclemen         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 void	ft_putnbr_fd(int n, int fd)
@@ -23,13 +35,3 @@ void	ft_putnbr_fd(int n, int fd)
 		ft_putnbr_fd(n % 10, fd);
 	}
 }
-/*
-int main()
-{
-	ft_putnbr_fd(-2147483648, 1);
-	ft_putnbr_fd(2147483647, 1);
-	ft_putnbr_fd(0, 1);
-	ft_putnbr_fd(10, 1);
-	ft_putnbr_fd(-10, 1);
-}
-*/

@@ -375,14 +375,32 @@ int main()
 
 
 	/*// ft_itoa.c (recebe um numero e retorna uma string)
-	printf("%s\n",ft_itoa(0));
+	printf("%s\n",ft_itoa(-0));
 	printf("%s\n",ft_itoa(10));
 	printf("%s\n",ft_itoa(-10));
 	printf("%s\n",ft_itoa(-2147483648));
 	printf("%s\n",ft_itoa(2147483647));*/
 
+	// ft_strmapi.c (aplica a função recebida em cada caracter da string recebida e malloca na nova string)
+
+	// ft_striteri.c (chama a função passando posição por posição da string)
 
 
-	// ft_
+	// ft_putchar_fd.c (putchar no index fd)
+	//ft_putchar_fd('a', 1);
+
+	// ft_putstr_fd.c (putstr no index fd);
+	//ft_putstr_fd("I LOVE VASCO\n",1);
+
+	// ft_putendl_fd.c
+	//ft_putendl_fd("I LOVE VASCO",1);
+
+	// ft_putnbr_fd.c
+	/*ft_putnbr_fd(-2147483648, 1);
+	ft_putnbr_fd(2147483647, 1);
+	ft_putnbr_fd(-0, 1);
+	ft_putnbr_fd(10, 1);
+	ft_putnbr_fd(-10, 1);*/
+
 	return (0);
 }

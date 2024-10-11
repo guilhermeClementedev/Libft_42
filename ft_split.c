@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: guclemen <guclemen@student.42.rio>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/11 14:21:35 by guclemen          #+#    #+#             */
+/*   Updated: 2024/10/11 14:21:37 by guclemen         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-static int	ft_words (const char *s, int c)
+static int	ft_words(const char *s, int c)
 {
 	unsigned int	i;
 	unsigned int	count;
@@ -20,7 +32,7 @@ static int	ft_words (const char *s, int c)
 	return (count);
 }
 
-static int	ft_sizeword (const char *src, int c)
+static int	ft_sizeword(const char *src, int c)
 {
 	unsigned int	i;
 
@@ -30,7 +42,7 @@ static int	ft_sizeword (const char *src, int c)
 	return (i);
 }
 
-static void	ft_allocword (char **ptrs, const char *s, int c)
+static void	ft_allocword(char **ptrs, const char *s, int c)
 {
 	unsigned int	i;
 	unsigned int	k;

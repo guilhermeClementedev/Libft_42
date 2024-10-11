@@ -10,7 +10,9 @@ ft_memchr.c ft_memcmp.c ft_calloc.c ft_substr.c ft_strjoin.c ft_strtrim.c ft_spl
 ft_itoa.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_striteri.c \
 ft_strmapi.c
 
-BONUS_SRC = ft_lstnew_bonus.c
+BONUS_SRC = ft_lstnew_bonus.c ft_lstsize_bonus.c ft_lstlast_bonus.c \
+ft_lstadd_front_bonus.c ft_lstadd_back_bonus.c
+
 
 CFLAGS = -Wall -Wextra -Werror
 
@@ -20,8 +22,8 @@ OBJ_BONUS = $(BONUS_SRC:.c=.o)
 
 all: $(NAME)
 
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+.c.o:
+	$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
 
 bonus: $(OBJ_BONUS) $(NAME)
 	ar -rcs $(NAME) $(OBJ_BONUS)
