@@ -55,4 +55,5 @@ Contact
 Feel free to reach out if you have any questions or suggestions:
 
 Email: guilhermeclementedealmeida@gmail.com
+
 LinkedIn: https://www.linkedin.com/in/guilherme-clemente-de-almeida-a637b9217/
