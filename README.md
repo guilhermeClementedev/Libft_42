@@ -51,7 +51,7 @@ Files Overview
 libft.h: Header file containing function prototypes and macros.
 *.c files: Source code for all the implemented functions.
 Makefile: Makefile to compile the library.
-
+_______________________________________________________________
 Contact
 Feel free to reach out if you have any questions or suggestions:
 
