@@ -1,6 +1,7 @@
 Libft - 42 School Project
 
 Overview
+
 This repository contains my implementation of Libft, the 
 first core project at 42 School. The goal of this project 
 is to recreate essential C standard library functions and 
